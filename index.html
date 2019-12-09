@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="SokobanBase.js"></script>
+    <script src="sbase_js.js"></script>
+    <link rel="stylesheet" type="text/css" href="myStyles.css" />
+    
+</head>
+
+    <body>
+        <div id="mydiv">
+            <p>O</p>
+            <p>|</p>
+            <p>/\</p>
+        </div>
+        <script>
+        function place(id,x_pos, y_pos) {
+            var element = document.getElementById(id);
+            element.style.position = "absolute";
+            element.style.left = x_pos+'px';
+            element.style.top = y_pos+'px';
+          }
+          
+          
+          function update(){
+             document.addEventListener('keydown', keyPress);
+          }
+            
+          function keyPress(e) {
+            var x = e.keyCode;
+            
+            var move = document.getElementById("mydiv").getBoundingClientRect();
+           
+            var left = parseInt(move.left,10);
+            var top = parseInt(move.top,10)
+              
+            switch (x) {
+              case 37:
+               place('mydiv', left -10,  top);
+                break;
+          
+              case 39:
+             place('mydiv', left+10,  top);
+                break;
+          
+              case 38:
+              place('mydiv', left,  top-10);
+                break;
+          
+              case 40:
+               place('mydiv', left,  top+10);
+                break;
+            }
+           // console.log(x);
+          }
+          update();
+        </script>
+    </body>
+
+</html>

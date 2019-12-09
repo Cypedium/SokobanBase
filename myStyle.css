@@ -1,0 +1,20 @@
+.wall{
+background-color: brown;
+}
+
+.goal{
+background-color: lightgrey;
+}
+
+.block {
+background-color: lightyellow;
+}
+
+.player{
+    background-color: blue;
+    color: violet;
+}
+
+body {
+    background-color: green;
+}
